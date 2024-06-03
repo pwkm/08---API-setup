@@ -46,7 +46,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	router.Run(":" + port)
+	router.Run()
 }
 
 // getAlbums responds with the list of all albums as JSON.
