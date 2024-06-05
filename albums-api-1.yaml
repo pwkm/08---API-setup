@@ -4,24 +4,21 @@ info:
   description: Albums API Sample
   version: 1.0.0
 
-host: albums-api.apigateway.myfinance-409219.cloud.goog
+# host: albums-api.apigateway.myfinance-409219.cloud.goog
 # basePath: /v1
 schemes:
   - https
-
-
+produces: 
+  - application/json
+x-google-backend:
+  address: https://apiserver-axdcnvcnfa-ew.a.run.app
 paths:  
-  /albums:
+  /:
     get:
       summary: Retrieve list of albums
       operationId: listAlbums
-      x-google-backend:
-        address: https://apiserver-axdcnvcnfa-ew.a.run.app/albums
-      produces: 
-        - application/json
       responses:
         200:
           description:  "Successfully get a list of albums"
           schema:
             type: string
-  

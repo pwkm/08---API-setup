@@ -1,0 +1,40 @@
+swagger: "2.0"
+info:
+  title: albums-api
+  description: Albums API Sample
+  version: 1.0.0
+
+# host: albums-api.apigateway.myfinance-409219.cloud.goog
+# basePath: /v1
+schemes:
+  - https
+produces: 
+  - application/json
+x-google-backend:
+  address: https://apiserver-axdcnvcnfa-ew.a.run.app
+paths:  
+  /:
+    get:
+      summary: Retrieve list of albums
+      operationId: listAlbums
+      responses:
+        200:
+          description:  "Successfully get a list of albums"
+          schema:
+            type: string
+
+  /album/{id}:
+    get:
+      parameters:
+        - name: id 
+          in: path
+          required: true 
+          type: string
+      summary: Retrieve album with id of albums
+      operationId: getAlbum
+      responses:
+        200:
+          description:  "Successfully get a list of albums"
+          schema:
+            type: string
+  
