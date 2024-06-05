@@ -35,9 +35,9 @@ func main() {
 		log.Printf("defaulting to port %s", port)
 	}
 	router := gin.Default()
-	router.GET("/albums", getAlbums)
-	router.GET("/albums/:id", getAlbumByID)
-	router.POST("/albums", postAlbums)
+	router.GET("/", getAlbums)
+	router.GET("/album/:id", getAlbumByID)
+	router.POST("/album", postAlbums)
 	router.Run(":" + port)
 }
 
