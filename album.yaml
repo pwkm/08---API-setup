@@ -1,0 +1,22 @@
+swagger: '2.0'
+info:
+  title: <API_ID> <optional_string> 
+  description: Albums api request
+  version: 1.0.0
+host: <DNS_name_of_Deployed_API>
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /albums:
+    get:
+      summary: Retrieve list of albums
+      operatonID: "albums"
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description:  Successfully get a list of albums
+          schema:
+            type: string
